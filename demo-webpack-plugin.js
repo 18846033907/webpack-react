@@ -1,4 +1,3 @@
-const { Compilation } = require("webpack");
 
 class DemoWebpackPlugin {
   constructor() {
@@ -6,11 +5,11 @@ class DemoWebpackPlugin {
   }
   apply(compiler) {
     compiler.hooks.compile.tap("DemoWebpackPlugin", (compilation, fn) => {
-      console.log(compilation);
+      console.log(9,compilation);
     });
 
     compiler.hooks.emit.tapAsync("DemoWebpackPlugin", (compilation, fn) => {
-      console.log(compilation);
+      // console.log(13,compilation);
       compilation.assets["index.md"] = {
         // 文件内容
         source: function () {
